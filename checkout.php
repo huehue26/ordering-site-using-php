@@ -37,6 +37,8 @@ include_once 'connect.php';
 
 							<?php
 							$total = 0;
+							$discount = 0;
+							$quantity = 0;
 							while ($row = mysqli_fetch_array($result)) {
 							?>
 								<div class="row">
@@ -60,13 +62,24 @@ include_once 'connect.php';
 								<hr>
 							<?php
 								$total = $total + ($b['unit_price'] * $row['quantity']);
+								$quantity = $quantity + $row['quantity'];
+								if ($quantity > 10) {
+									$total = $total * 0.15;
+									$discount = 15;
+								} else if ($quantity > 5) {
+									$total = $total * 0.08;
+									$discount = 8;
+								}
 							}
 							?>
 						</div>
 						<div class="panel-footer">
 							<div class="row text-center">
 								<div class="col-xs-9">
-									<h4 class="text-right">Total: <strong><?php echo "$total"; ?>.00</strong></h4>
+									<h4 class="text-right">
+										Total: <strong><?php echo "$total"; ?>.00</strong>
+										<strong>Discount : <?php echo "$discount"; ?>%</strong>
+									</h4>
 								</div>
 								<div class="col-xs-3">
 									<button type="button" class="btn btn-success btn-block" onclick="window.location.href = 'payment_dmp.php'">
