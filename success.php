@@ -4,10 +4,18 @@ require_once 'connect.php';
 include "nav.php";
 if (isset($_POST['place_order']) != 0) {
 	$address = $_POST['area'];
-	$customerId = 2;
+	$sql = "SELECT * FROM user WHERE username = '$_SESSION[username]'";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_array($result);
+	$customerId = $row['sl'];
 	$query = "INSERT INTO cust_order VALUES('$address',NULL,'$customerId')";
 	mysqli_query($conn, $query);
-	echo "$query";
+	$sql2 = "SELECT MAX(order_id) as max FROM cust_order";
+	$result2 = mysqli_query($conn, $sql2);
+	$row2 = mysqli_fetch_array($result2);
+	$orderId = $row2['max'];
+	$query2 = "INSERT INTO cust_tracker VALUES('$orderId','Your order has been sucessfully placed and will be dispatched soon',NULL)";
+	mysqli_query($conn, $query2);
 }
 ?>
 
@@ -15,9 +23,7 @@ if (isset($_POST['place_order']) != 0) {
 <html lang="en">
 
 <head>
-
 	<title>Profile</title>
-
 </head>
 
 <body>

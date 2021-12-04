@@ -70,8 +70,7 @@ if (isset($_POST['clear_cart']) != 0) {
       <div class="col-md-3"></div>
       <div class="col-md-3">
         <form class="form-inline" role="form" class="pagination-right" action="profileEdit.php">
-          <div class="form-group" align="right">
-            <button type="submit" class="btn btn-xl btn-danger"> Edit</button>
+          <button type="submit" class="btn btn-xl btn-danger"> Edit</button>
         </form>
       </div>
     </div>

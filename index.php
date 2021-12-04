@@ -21,7 +21,6 @@
   <?php
   include "food.php";
   ?>
-
 </body>
 
 </html>
