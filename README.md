@@ -76,4 +76,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * It was a collaborative project with my classmates, hatts off to them for putting things together. :blush:
 * And learned a lot from various youtube videos :relaxed:
 
-# dbms

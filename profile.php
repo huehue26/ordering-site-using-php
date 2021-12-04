@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once 'connect.php';
+if (isset($_POST['clear_cart']) != 0) {
+  $query = 'TRUNCATE TABLE cart';
+  mysqli_query($conn, $query);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +16,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Foodie</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="assets/css/half-slider.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/half-slider.css" rel="stylesheet">
+  <link href="assets/css/index.css" rel="stylesheet">
+  <script src="assets/js/source.bootstrap.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <title>Profile</title>
 
 </head>
 
@@ -62,6 +76,9 @@
       </div>
     </div>
   </section>
+  <?php
+  include "checkout.php"
+  ?>
 </body>
 
 </html>

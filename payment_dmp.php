@@ -9,28 +9,19 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,700italic|Open+Sans">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/check-radio.css">
-
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Foodie</title>
-
-    <!-- Custom styles for this profile page -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-
     <?php
     include "nav.php";
     ?>
-
-
-    <form class="Form" action="profile.html">
+    <form style="margin-left:200px;" action="success.php" method="POST">
 
         <h2>Billing Information</h2>
         <p>
@@ -39,10 +30,7 @@
 
             <br><input type="text" name="zip" placeholder="Zip code">
             <br>
-
             <br><input type="text" name="rd" placeholder="Road no.">
-            <br>
-            <br><input type="text" name="area" placeholder="Area">
             <br>
             <br><input type="text" name="area" placeholder="Area">
             <br>
@@ -73,15 +61,9 @@
         <div class="col-md-9"></div>
 
         <div class="form-group col-mid-9">
-            <button type="submit" class="btn btn-xl btn-danger"> Place Order</button>
+            <input type="submit" class="btn btn-xl btn-danger" name="place_order" value="Place Order">
         </div>
     </form>
-
-
-    <?php
-    include "footer.php";
-    ?>
-
 </body>
 
 </html>

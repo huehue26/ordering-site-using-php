@@ -18,13 +18,6 @@
 </head>
 
 <body>
-
-  <?php
-  include "nav.php";
-  ?>
-  <br>
-
-  <div class="col-md-4"></div>
   <?php
   include "food.php";
   ?>
