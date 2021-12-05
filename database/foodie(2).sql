@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 05, 2021 at 07:20 AM
+-- Generation Time: Dec 05, 2021 at 09:47 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -30,15 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `cart_id` int(100) NOT NULL,
   `quantity` int(100) NOT NULL,
-  `product_id` int(100) NOT NULL
+  `product_id` int(100) NOT NULL,
+  `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `quantity`, `product_id`) VALUES
-(1, 4, 2);
+INSERT INTO `cart` (`cart_id`, `quantity`, `product_id`, `customer_id`) VALUES
+(1, 10, 3, 0),
+(2, 10, 2, 4),
+(3, 10, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -49,25 +52,40 @@ INSERT INTO `cart` (`cart_id`, `quantity`, `product_id`) VALUES
 CREATE TABLE `cust_order` (
   `customer_address` char(30) NOT NULL,
   `order_id` int(100) NOT NULL,
-  `customer_id` int(100) NOT NULL
+  `customer_id` int(100) NOT NULL,
+  `cart_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cust_order`
 --
 
-INSERT INTO `cust_order` (`customer_address`, `order_id`, `customer_id`) VALUES
-('asdsf', 26, 4),
-('asdsf', 27, 4),
-('asdsf', 28, 4),
-('asdsf', 29, 4),
-('asdsf', 30, 4),
-('asdsf', 31, 4),
-('asdsf', 32, 4),
-('asdsf', 33, 4),
-('asdsf', 34, 4),
-('asdsf', 35, 4),
-('asdsf', 36, 4);
+INSERT INTO `cust_order` (`customer_address`, `order_id`, `customer_id`, `cart_id`) VALUES
+('asdsf', 36, 4, 0),
+('', 37, 4, 0),
+('', 38, 4, 0),
+('', 39, 4, 0),
+('', 40, 4, 0),
+('', 41, 4, 0),
+('', 42, 4, 0),
+('', 43, 4, 0),
+('', 44, 4, 0),
+('', 45, 4, 0),
+('', 46, 4, 0),
+('', 47, 4, 0),
+('', 48, 4, 0),
+('', 49, 4, 0),
+('', 50, 4, 0),
+('', 51, 4, 0),
+('', 52, 4, 0),
+('', 53, 4, 0),
+('', 54, 4, 0),
+('', 55, 4, 2),
+('', 56, 4, 3),
+('', 57, 4, 2),
+('', 58, 4, 3),
+('', 59, 4, 2),
+('', 60, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -177,13 +195,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cust_order`
 --
 ALTER TABLE `cust_order`
-  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `product`

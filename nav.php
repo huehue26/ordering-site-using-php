@@ -1,18 +1,5 @@
 <?php
-// session_start();
-$status = session_status();
-if ($status == PHP_SESSION_NONE) {
-  //There is no active session
-  session_start();
-} else
-if ($status == PHP_SESSION_DISABLED) {
-  //Sessions are not available
-} else
-if ($status == PHP_SESSION_ACTIVE) {
-  //Destroy current and start new one
-  session_destroy();
-  session_start();
-}
+session_start();
 require_once 'connect.php';
 ?>
 <!DOCTYPE html>
@@ -82,6 +69,9 @@ require_once 'connect.php';
         <ul class="nav navbar-nav navbar-right">
           <a href="profile.php"> <button type="button" style="padding:3px;margin-right:3px;background-color: #8db0d6d4;" class="btn btn-primary">Profile</button></a>
           <a href="logout.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Logout</button></a>
+          <a href="checkout.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Cart</button></a>
+          <a href="tracker.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Tracker</button></a>
+          <a href="cancel_order.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Cancel Order</button></a>
         </ul>
       <?php
       }

@@ -2,9 +2,15 @@
 session_start();
 require_once 'connect.php';
 if (isset($_POST['add_to_cart']) != 0) {
+
+    $sql = "SELECT * FROM user WHERE username = '$_SESSION[username]'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $customerId = $row['sl'];
+
     $productId = $_POST['product_id'];
     $quantity = $_POST['quantity'];
-    $query = 'INSERT INTO cart(quantity,product_id) VALUES ("' . $quantity . '","' . $productId . '")';
+    $query = 'INSERT INTO cart(quantity,product_id,customer_id) VALUES ("' . $quantity . '","' . $productId . '","' . $customerId . '")';
     mysqli_query($conn, $query);
 }
 ?>
@@ -16,13 +22,6 @@ if (isset($_POST['add_to_cart']) != 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/css/half-slider.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/half-slider.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet">
-    <script src="assets/js/source.bootstrap.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/food2.css">
     <title>Foodie</title>
     <style>
         .container-food {
@@ -61,7 +60,6 @@ if (isset($_POST['add_to_cart']) != 0) {
     $row = mysqli_fetch_array($result);
     ?>
     <div class="container-food">
-        <!-- <h4 style="margin-left: 200px;"> -->
         <?php do {
             $quantity = 0;
             echo "<div class='food-child'>";
@@ -89,7 +87,6 @@ if (isset($_POST['add_to_cart']) != 0) {
             echo "</div>";
         } while ($row = mysqli_fetch_array($result));
         ?>
-        <!-- </h4> -->
     </div>
     <link rel="stylesheet" href="css/food2.css">
 

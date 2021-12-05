@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Pure CSS - Custom styled radio- and checkboxes</title>
+    <title>Payment</title>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,700italic|Open+Sans">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/check-radio.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -21,7 +20,7 @@
     <?php
     include "nav.php";
     ?>
-    <form style="margin-left:200px;" action="success.php" method="POST">
+    <form style="margin-left:200px;" action="success.php" method="POST" class="container-fluid">
 
         <h2>Billing Information</h2>
         <p>
@@ -51,11 +50,6 @@
                 <span class="Form-label-text">Cash on Delivery</span>
             </label>
             <br>
-            <label class="Form-label--tick">
-                <input type="radio" value="U" name="SomeRadio" class="Form-label-radio">
-                <span class="Form-label-text">Bkash</span>
-            </label>
-            <input type="text" name="bkash" placeholder="Bkash no.">
         </div>
 
         <div class="col-md-9"></div>
