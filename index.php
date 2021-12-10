@@ -13,7 +13,7 @@
   <link href="assets/css/index.css" rel="stylesheet">
   <script src="assets/js/source.bootstrap.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>
-  <title>Foodie</title>
+  <title>Title</title>
 
 </head>
 

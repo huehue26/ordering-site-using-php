@@ -10,7 +10,7 @@ require_once 'connect.php';
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Foodie</title>
+  <title>Title</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/food.css">
 
@@ -19,7 +19,7 @@ require_once 'connect.php';
 <body>
 
   <nav id="food_nav" style="background-color: #506179!important;" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="food.php">Foodie</a>
+    <a class="navbar-brand" href="food.php">Site</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,7 +71,6 @@ require_once 'connect.php';
           <a href="logout.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Logout</button></a>
           <a href="checkout.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Cart</button></a>
           <a href="tracker.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Tracker</button></a>
-          <a href="cancel_order.php"><button type="button" style="padding:3px;margin-right:3px;;background-color: #8db0d6d4;" class="btn btn-primary">Cancel Order</button></a>
         </ul>
       <?php
       }

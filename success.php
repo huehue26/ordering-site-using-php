@@ -9,7 +9,7 @@ if (isset($_POST['place_order']) != 0) {
 	$row = mysqli_fetch_array($result);
 	$customerId = $row['sl'];
 
-	$sql3 = "SELECT cart_id FROM cart WHERE customer_id = '$customerId'";
+	$sql3 = "SELECT * FROM cart WHERE customer_id = '$customerId'";
 	$result3 = mysqli_query($conn, $sql3);
 	$row3 = mysqli_fetch_array($result3);
 
@@ -25,6 +25,24 @@ if (isset($_POST['place_order']) != 0) {
 	$orderId = $row2['max'];
 	$query2 = "INSERT INTO cust_tracker VALUES('$orderId','Your order has been sucessfully placed and will be dispatched soon',NULL)";
 	mysqli_query($conn, $query2);
+
+
+	// remove quantity from the stock
+	$sql6 = "SELECT * FROM cart WHERE customer_id = '$customerId'";
+	$result6 = mysqli_query($conn, $sql6);
+	$row6 = mysqli_fetch_array($result6);
+	do {
+		$cartId = $row6['cart_id'];
+		$productId = $row6['product_id'];
+		$sql4 = "SELECT in_stock FROM product WHERE product_id='$productId'";
+		$result4 = mysqli_query($conn, $sql4);
+		$row4 = mysqli_fetch_array($result4);
+		$inStock = $row4['in_stock'];
+		$Quantity = $row6['quantity'];
+		$newStock = $inStock - $Quantity;
+		$query5 = "UPDATE product SET in_stock=$newStock WHERE product_id='$productId'";
+		mysqli_query($conn, $query5);
+	} while ($row6 = mysqli_fetch_array($result6));
 }
 ?>
 
